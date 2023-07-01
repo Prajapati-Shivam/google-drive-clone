@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import AddFolderButton from "./AddFolderButton";
+import AddFileButton from "./AddFileButton";
 import { useFolder } from "../../hooks/useFolder";
 import Folder from "./Folder";
 import { useParams, useLocation } from "react-router-dom";
@@ -16,6 +17,7 @@ export default function Dashboard() {
       <div className="px-6 py-4">
         <div className="flex items-center">
           <FolderBreadcrumps currentFolder={folder} />
+          <AddFileButton currentFolder={folder} />
           <AddFolderButton currentFolder={folder} />
         </div>
         {childFolders.length > 0 && (
